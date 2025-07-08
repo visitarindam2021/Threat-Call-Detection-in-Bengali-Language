@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Threat Call Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+
+<div class="container">
+    <h1>📞 Threat Call Detection</h1>
+    <p>Upload or record a voice message to check if it’s a threat.</p>
+
+    <input type="file" id="audioInput" accept="audio/*">
+    <button id="detectBtn" onclick="uploadAudio()">Detect from File</button>
+
+    <div class="divider">OR</div>
+
+    <button id="recordBtn" onclick="startRecording()">🎙️ Start Recording</button>
+    <button id="stopBtn" onclick="stopRecording()" disabled>⏹️ Stop & Detect</button>
+
+    <p id="micStatus" style="display: none; color: red; font-weight: bold;">🎤 Listening...</p>
+
+    <div id="result"></div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
